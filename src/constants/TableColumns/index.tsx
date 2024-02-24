@@ -44,7 +44,7 @@ const TableColumns: TableColumnType<LeaderboardDataType>[] = [
   {
     title: "",
     key: "",
-    render: () => <Button>Lihat Detail</Button>,
+    render: () => <Button type="primary">Lihat Detail</Button>,
   },
 ] as const;
 

@@ -1,38 +1,36 @@
 "use client";
-import { Navabar, Footer } from "@/components/layout";
+import { Footer, Navabar } from "@/components/layout";
 import { LeaderboardData, TableColums } from "@/constants";
 import { SendOutlined } from "@ant-design/icons";
-import { Button, Flex, Form, Input, Table } from "antd";
+import { Button, Flex, Form, Input, Layout, Space, Table, Typography } from "antd";
+
+const { Content } = Layout;
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-[#F3F9FE]">
+    <Layout style={{ width: '100%', minHeight: '100vh', backgroundColor: '#F3F9FE' }}>
       <Navabar />
-      <main>
-        <div className="w-full h-screen pt-16 md:pt-32">
-          <div className="w-full px-4 max-w-6xl mx-auto md:px-6">
-            <div className="text-center">
-              <h1 className="font-bold text-2xl text-[#1D566D] mb-2">Leaderboard Prestasi Aktivis Salman</h1>
-              <p className="text-[#1D566D]">Dikelola oleh Bidang Mahasiswa, Kaderisasi, dan Alumni Masjid Salman ITB</p>
-            </div>
+      <Content style={{ padding: '64px 250px 0 250px' }}>
+        <Space direction="vertical" align="center" style={{ width: '100%', marginBottom: '50px' }}>
+          <Typography.Title level={1} style={{ color: '#1D566D' }}>Leaderboard Prestasi Aktivis Salman</Typography.Title>
+          <Typography.Text style={{ color: '#1D566D', fontSize: '18px' }}>Dikelola oleh Bidang Mahasiswa, Kaderisasi, dan Alumni Masjid Salman ITB</Typography.Text>
+        </Space>
+        <Flex vertical>
+          <Form>
+            <Space>
+              <Form.Item>
+                <Input size="large" placeholder="Cari berdasarkan nama" />
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit" icon={<SendOutlined />} />
+              </Form.Item>
+            </Space>
+          </Form>
 
-            <Form>
-              <Flex gap="middle">
-                <Form.Item>
-                  <Input />
-                </Form.Item>
-
-                <Form.Item>
-                  <Button htmlType="submit" icon={<SendOutlined />} />
-                </Form.Item>
-              </Flex>
-            </Form>
-
-            <Table columns={TableColums} dataSource={LeaderboardData} />
-          </div>
-        </div>
-      </main>
+          <Table columns={TableColums} dataSource={LeaderboardData} />
+        </Flex>
+      </Content>
       <Footer />
-    </div>
+    </Layout>
   );
 }
