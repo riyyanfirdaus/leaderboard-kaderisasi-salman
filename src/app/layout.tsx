@@ -1,8 +1,8 @@
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { ConfigProvider } from "antd";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { ConfigProvider } from "antd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,21 +24,21 @@ export default function RootLayout({
             theme={{
               components: {
                 Menu: {
-                  horizontalItemSelectedColor: '#1F99CC',
-                  itemColor: '#9F9F9F'
+                  horizontalItemSelectedColor: "#1F99CC",
+                  itemColor: "#9F9F9F",
                 },
                 Button: {
-                  colorPrimary: '#1F99CC',
-                  colorPrimaryHover: '#1D566D',
-                  colorPrimaryActive: '#1F99CC',
-                  defaultGhostColor: '#9F9F9F',
-                  defaultGhostBorderColor: '#9F9F9F',
+                  colorPrimary: "#1F99CC",
+                  colorPrimaryHover: "#1D566D",
+                  colorPrimaryActive: "#1F99CC",
+                  defaultGhostColor: "#9F9F9F",
+                  defaultGhostBorderColor: "#9F9F9F",
                 },
                 Table: {
-                  headerBg: '#ffffff',
-                  headerColor: '#1F99CC',
-                }
-              }
+                  headerBg: "#ffffff",
+                  headerColor: "#1F99CC",
+                },
+              },
             }}
           >
             {children}
