@@ -3,6 +3,7 @@ import { fetchAchievements } from "@/db/queries/achievements";
 
 export default async function Home() {
   const achievements = await fetchAchievements();
+  console.log(achievements);
 
   return (
     <PageWrapper>
